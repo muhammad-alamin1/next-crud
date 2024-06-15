@@ -45,9 +45,14 @@ export default function ContactForm() {
       }
 
       const result = await response.json();
-      setSuccess(true);
-      setError(false);
-      console.log(result);
+      if (result.status(200)) {
+        setSuccess(true);
+        setError(false);
+        console.log(result);
+
+        // redircet
+        result.redirect(307, ``);
+      }
 
       // Reset form after submission
       setForm({
@@ -77,6 +82,7 @@ export default function ContactForm() {
             name="name"
             value={form.name}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -87,6 +93,7 @@ export default function ContactForm() {
             name="email"
             value={form.email}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -96,6 +103,7 @@ export default function ContactForm() {
             name="message"
             value={form.message}
             onChange={handleChange}
+            required
           />
         </div>
         <button type="submit">Submit</button>

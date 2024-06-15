@@ -23,6 +23,9 @@ export default function RootLayout({ children }) {
           <li>
             <Link href={"/register"}>Register</Link>
           </li>
+          <li>
+            <Link href={"/delete"}>Delete</Link>
+          </li>
         </ul>
         {children}
       </body>
