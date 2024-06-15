@@ -20,6 +20,9 @@ export default function RootLayout({ children }) {
           <li>
             <Link href={"/posts"}>Posts</Link>
           </li>
+          <li>
+            <Link href={"/register"}>Register</Link>
+          </li>
         </ul>
         {children}
       </body>
